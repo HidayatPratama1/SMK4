@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <link rel="icon" href="assets/icon/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenangan UKK Multimedia 2023 - SMKN 4 Tanjung Jabung Timur</title>
+    <link rel="stylesheet" href="indexStyle.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="listmenu">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#ABOUT">ABOUT</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="home loading" id="home">
+        <div class="home-poster">
+          <h1 class="homecaption">
+            SMKN 4 TANJUNG JABUNG TIMUR <br />
+            <span>Kenangan UKK Multimedia 2023</span>
+          </h1>
+          <img
+            src="assets/images/FOTO RAMAI.JPG"
+            alt="Foto Bersama"
+            class="gambar-bersama"
+          />
+        </div>
+
+        <div class="home-foto">
+          <img src="assets/images/1.JPG" alt="Foto 1" />
+          <img src="assets/images/2.JPG" alt="Foto 2" />
+          <img src="assets/images/3.JPG" alt="Foto 3" />
+          <img src="assets/images/4.JPG" alt="Foto 4" />
+        </div>
+
+        <div id="fullscreen-overlay">
+          <span class="close-button">&times;</span>
+          <img id="fullscreen-image" src="" alt="Full Screen Image" />
+        </div>
+      </section>
+
+      <section id="ABOUT" class="about loading">
+        <div class="judulabout">
+          <h1>UKK MULTIMEDIA 2023</h1>
+          <p>DI SMKN 4 TANJUNG JABUNG TIMUR</p>
+        </div>
+
+        <div class="katakata-about">
+          <p class="katakata">
+            Dulu di SMK, canda tawa menghiasi hari,<br />
+            Belajar, berkarya, mengejar mimpi.<br />
+            Kini terpencar, mencari rezeki,<br />
+            Namun hati tetap terpaut erat, tak henti.<br /><br />
+
+            Semoga langkahmu selalu diberkahi,<br />
+            Sukses menyertai setiap jejak kaki.<br />
+            Jangan lupakan masa lalu yang berarti,<br />
+            Sampai jumpa, kawan, di lain hari.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="contact loading">
+        <div class="contact-container">
+          <h2>Hubungi saya</h2>
+
+          <!-- Social Media Links -->
+          <div class="social-links">
+            <a
+              href="https://instagram.com/smkn4tanjabtim"
+              class="social-link instagram"
+              target="_blank"
+              title="Instagram"
+            >
+              <img src="assets/icon/ig.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://twitter.com/smkn4tanjabtim"
+              class="social-link twitter"
+              target="_blank"
+              title="Twitter/X"
+            >
+              <img src="assets/icon/x.png" alt="Twitter" />
+            </a>
+          </div>
+
+          <!-- Crypto Wallets Section -->
+          <div class="crypto-section">
+            <h3>Donasi :</h3>
+            <div class="crypto-wallets">
+              <div class="crypto-wallet">
+                <div class="crypto-info">
+                  <div class="crypto-logo">
+                    <img
+                      src="assets/icon/eth.png"
+                      alt="Ethereum"
+                      onerror="this.style.display='none'; this.parentElement.classList.add('fallback'); this.parentElement.innerHTML='🔷';"
+                    />
+                  </div>
+                  <div class="crypto-details">
+                    <div class="crypto-name">Ethereum (ETH)</div>
+                    <div class="crypto-address">
+                      0xA200755eC3Cb92c37d56640C21374f2B07818389
+                    </div>
+                  </div>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard(this)">
+                  Copy
+                </button>
+              </div>
+
+              <div class="crypto-wallet">
+                <div class="crypto-info">
+                  <div class="crypto-logo">
+                    <img
+                      src="assets/icon/solana.png"
+                      alt="Solana"
+                      onerror="this.style.display='none'; this.parentElement.classList.add('fallback'); this.parentElement.innerHTML='🟣';"
+                    />
+                  </div>
+                  <div class="crypto-details">
+                    <div class="crypto-name">Solana (SOL)</div>
+                    <div class="crypto-address">
+                      Ena7z8sioovVZZ4PS2g3X882TNMLvho5BKHfgJvrUd6y
+                    </div>
+                  </div>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard(this)">
+                  Copy
+                </button>
+              </div>
+
+              <div class="crypto-wallet">
+                <div class="crypto-info">
+                  <div class="crypto-logo">
+                    <img
+                      src="assets/icon/btc.png"
+                      alt="Bitcoin"
+                      onerror="this.style.display='none'; this.parentElement.classList.add('fallback'); this.parentElement.innerHTML='🟠';"
+                    />
+                  </div>
+                  <div class="crypto-details">
+                    <div class="crypto-name">Bitcoin (BTC)</div>
+                    <div class="crypto-address">
+                      bc1qlmfya0m2m0esqxgzlyv9vdfj0ddyma700vyprw
+                    </div>
+                  </div>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard(this)">
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2023 SMKN 4 Tanjung Jabung Timur - UKK Multimedia. All rights
+        reserved.
+      </p>
+      <p>Dibuat oleh Hidayat Pratama</p>
+    </footer>
+
+    <script src="java.js"></script>
+  </body>
+</html>
