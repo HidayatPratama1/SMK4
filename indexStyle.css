@@ -217,8 +217,10 @@ main {
   z-index: 2000;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
   opacity: 0;
   transition: opacity 0.3s ease;
+  overflow: hidden;
 }
 
 #fullscreen-image {
@@ -227,6 +229,12 @@ main {
   border-radius: 14px;
   object-fit: contain;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.15s ease;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .close-button {
@@ -550,5 +558,23 @@ footer p + p {
   .social-link img {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  #fullscreen-overlay {
+    padding: 0.5rem;
+  }
+
+  #fullscreen-image {
+    max-width: 96%;
+    max-height: 82vh;
+    border-radius: 10px;
+  }
+
+  .close-button {
+    top: 12px;
+    right: 18px;
+    font-size: 1.9rem;
   }
 }

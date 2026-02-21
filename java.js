@@ -28,10 +28,37 @@ window.dispatchEvent(new Event("scroll"));
 const overlay = document.getElementById("fullscreen-overlay");
 const fullscreenImage = document.getElementById("fullscreen-image");
 const closeButton = document.querySelector(".close-button");
+let imageScale = 1;
+let initialPinchDistance = 0;
+let initialScale = 1;
+
+if (overlay && overlay.parentElement !== document.body) {
+  document.body.appendChild(overlay);
+}
+
+function applyImageScale() {
+  fullscreenImage.style.transform = `scale(${imageScale})`;
+}
+
+function resetImageScale() {
+  imageScale = 1;
+  applyImageScale();
+}
+
+function clampScale(value) {
+  return Math.min(4, Math.max(1, value));
+}
+
+function getTouchDistance(touches) {
+  const deltaX = touches[0].clientX - touches[1].clientX;
+  const deltaY = touches[0].clientY - touches[1].clientY;
+  return Math.hypot(deltaX, deltaY);
+}
 
 // Add click event to all images
 document.querySelectorAll(".home-foto img, .gambar-bersama").forEach((img) => {
   img.addEventListener("click", function () {
+    resetImageScale();
     fullscreenImage.src = this.src;
     fullscreenImage.alt = this.alt;
     overlay.style.display = "flex";
@@ -66,8 +93,63 @@ function closeFullscreen() {
   setTimeout(() => {
     overlay.style.display = "none";
     document.body.style.overflow = "";
+    resetImageScale();
   }, 300);
 }
+
+fullscreenImage.addEventListener(
+  "wheel",
+  function (event) {
+    if (overlay.style.display !== "flex") {
+      return;
+    }
+
+    event.preventDefault();
+    const delta = event.deltaY < 0 ? 0.2 : -0.2;
+    imageScale = clampScale(imageScale + delta);
+    applyImageScale();
+  },
+  { passive: false },
+);
+
+fullscreenImage.addEventListener("dblclick", function () {
+  imageScale = imageScale > 1 ? 1 : 2;
+  applyImageScale();
+});
+
+fullscreenImage.addEventListener(
+  "touchstart",
+  function (event) {
+    if (event.touches.length === 2) {
+      initialPinchDistance = getTouchDistance(event.touches);
+      initialScale = imageScale;
+    }
+  },
+  { passive: true },
+);
+
+fullscreenImage.addEventListener(
+  "touchmove",
+  function (event) {
+    if (event.touches.length !== 2 || initialPinchDistance === 0) {
+      return;
+    }
+
+    event.preventDefault();
+    const currentDistance = getTouchDistance(event.touches);
+    const pinchRatio = currentDistance / initialPinchDistance;
+    imageScale = clampScale(initialScale * pinchRatio);
+    applyImageScale();
+  },
+  { passive: false },
+);
+
+fullscreenImage.addEventListener("touchend", function (event) {
+  if (event.touches.length < 2) {
+    initialPinchDistance = 0;
+    initialScale = imageScale;
+  }
+});
 
 // Scroll animation observer
 const observerOptions = {
