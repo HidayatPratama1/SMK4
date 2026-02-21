@@ -25,7 +25,12 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background: radial-gradient(circle at 20% 0%, #dcebff 0%, #f4f9ff 38%, #edf5ff 100%);
+  background: radial-gradient(
+    circle at 20% 0%,
+    #dcebff 0%,
+    #f4f9ff 38%,
+    #edf5ff 100%
+  );
   min-height: 100vh;
 }
 
@@ -43,7 +48,10 @@ main {
   background: rgba(243, 248, 255, 0.7);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(31, 111, 235, 0.12);
-  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .header.scrolled {
@@ -69,7 +77,10 @@ main {
   text-transform: uppercase;
   padding: 0.65rem 1rem;
   border-radius: 999px;
-  transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .listmenu a:hover {
@@ -162,7 +173,9 @@ main {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 26px 50px rgba(5, 19, 43, 0.34);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
   cursor: pointer;
 }
 
@@ -184,7 +197,9 @@ main {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 14px 28px rgba(9, 28, 61, 0.24);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   cursor: pointer;
 }
 
@@ -221,7 +236,9 @@ main {
   font-size: 2.2rem;
   color: #d5e6ff;
   cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .close-button:hover {
@@ -331,7 +348,10 @@ main {
   justify-content: center;
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .social-link:hover {
@@ -368,7 +388,9 @@ main {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.13);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .crypto-wallet:hover {
@@ -433,7 +455,9 @@ main {
   font-weight: 700;
   cursor: pointer;
   min-width: 74px;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
 }
 
 .copy-btn:hover {
@@ -462,7 +486,9 @@ footer p + p {
 .scroll-animate {
   opacity: 0;
   transform: translateY(34px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
 }
 
 .scroll-animate.show {
